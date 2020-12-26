@@ -1,0 +1,23 @@
+	{% load static %}
+<div id="content">
+		<div class="banner-slider9">
+			<div class="wrap-item">
+                {% for rs in products_slider %}
+				<div class="item-banner9">
+					<div class="banner-thumb">
+						<a href="#"><img src="{{ rs.image.url }}" alt="" /></a>
+					</div>
+					<div class="banner-info">
+						<div class="container">
+							<div class="banner-info9">
+								<h3>Big Shop Theme</h3>
+								<h2>{{ rs.title }}</h2>
+								<p>{{ rs.description }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+                {% endfor %}
+            </div>
+			</div>
+		</div>

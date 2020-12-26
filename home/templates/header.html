@@ -1,0 +1,107 @@
+{% load static %}
+</head>
+<body>
+<div class="wrap">
+	<div id="header">
+		<div class="top-header3">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<p class="contact-top3">
+							<label>Welcome to BigC Store </label>
+							<span>Call Us: 0800 266 966</span>
+						</p>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<ul class="menu-top3 list-inline text-right">
+							<li><a href="#">Help</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Contact</a></li>
+							<li><a href="#">Blog</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header header3">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="main-nav main-nav3">
+							<ul class="main-menu">
+								<li class="menu-item-has-childrent current-menu-item">
+									<a href="/home">Home</a>
+								</li>
+								<li class="menu-item-has-childrent">
+									<a href="grid.html">Shop categories </a>
+								</li>
+							</ul>
+							<div class="mobile-menu">
+								<a href="#" class="show-menu"><span class="lnr lnr-indent-decrease"></span></a>
+								<a href="#" class="hide-menu"><span class="lnr lnr-indent-increase"></span></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="logo-header3">
+							<a href="index.html"><h1>BIG<span>C</span></h1></a>
+						</div>
+					</div>
+                     <form action="/search/" method="post">
+                            {% csrf_token %}
+							<input id="query" name="query" class="input search-input" type="text" placeholder="Enter your keyword">
+							<select name="catid" class="input search-categories">
+								<option value="0">Mahsulot turlari</option>
+
+                                {% for rs in category %}
+                                         <option value="{{ rs.id }}">{{ rs.title }}</option>
+                                {% endfor %}
+
+							</select>
+							<button class="search-btn"><i class="fa fa-search"></i></button>
+						</form>
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="info-header info-header3">
+							<ul class="info-total">
+								<li class="info-user info-user3">
+									<a href="#" class="info-icon icon-user"><span class="lnr lnr-user"></span></a>
+									<div class="box-info-user">
+										<ul class="list-unstyled user-info-list">
+											<li><a href="#"><span class="lnr lnr-lock"></span> Login / Register</a></li>
+											<li><a href="#"><span class="lnr lnr-heart"></span> Wishlist</a></li>
+											<li><a href="#"><span class="lnr lnr-sync"></span> Compare</a></li>
+											<li><a href="#"><span class="lnr lnr-exit"></span> Checkout</a></li>
+										</ul>
+										<ul class="list-unstyled language-list">
+											<li  class="active"><a href="#"><img src="images/flag-fr.png" alt="" />French</a></li>
+											<li><a href="#"><img src="images/flag-en.png" alt="" />English</a></li>
+											<li><a href="#"><img src="images/flag-gm.png" alt="" />German</a></li>
+										</ul>
+										<ul class="list-unstyled currency-list">
+											<li class="active"><a href="#">$ USD</a></li>
+											<li><a href="#">€ EUR</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="info-search">
+									<a href="#" class="info-icon icon-search"><span class="lnr lnr-magnifier"></span></a>
+									<div class="search-form search-form3">
+										<form>
+											<input type="text" value="Find amazing products" onfocus="if (this.value==this.defaultValue) this.value = ''" onblur="if (this.value=='') this.value = this.defaultValue" />
+											<input class="btn-link-default" type="submit" value="Search" />
+										</form>
+									</div>
+								</li>
+								<li class="info-cart info-cart3">
+									<a href="#" class="info-icon icon-cart"><span class="lnr lnr-cart"></span> <sup>0</sup></a>
+
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Header -->
+</div>

@@ -1,0 +1,889 @@
+{% load static %}
+<div class="banner-top-home3">
+			<div class="container">
+				<div class="row">
+                    {% for rs in category %}
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="banner-box banner-style1 box-left" style="height: 400px;">
+							<a href="#" class="banner-box-link">
+								<img src="{{ rs.image.url }}" alt="" />
+							</a>
+							<div class="banner-box-info">
+								<h2 class="title-banner-box-yellow"><span>{{ rs.title }}</span></h2>
+								<a href="/category/{{ rs.id }}/{{ rs.slug }}" class="btn-box-banner mt-5" style="margin-top: 50px">Quick view</a>
+							</div>
+						</div>
+					</div>
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+		<!-- End Banner Top -->
+		<div class="product-best-sale">
+			<div class="container">
+				<div class="title-product-best-sale">
+					<div class="row">
+						<div class="col-md-2">
+							<div class="filter-product">
+								<a href="#" class="btn-filter style-border-left" style="width: 170px;">Category</a>
+							</div>
+						</div>
+					</div>
+					<div class="box-attr-filter">
+						<div class="item-box-attr">
+							<div class="item-attr-title">
+{#								<label>Categories</label>#}
+							</div>
+							<div class="item-attr-content">
+								<ul class="attr-category list-inline">
+                                    {% for rs in category %}
+									<li><a href="/category/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></li>
+                                    {% endfor %}
+								</ul>
+							</div>
+						</div>
+{#						<div class="item-box-attr">#}
+{#							<div class="item-attr-title">#}
+{#								<label>Price</label>#}
+{#							</div>#}
+{#							<div class="item-attr-content">#}
+{#								<div id="slider-range-price"></div>#}
+{#								<div class="attr-price-filter">#}
+{#									<p>#}
+{#										<label for="amount-price">Filter By Price: </label>#}
+{#										<input type="text" id="amount-price" readonly />#}
+{#									</p>#}
+{#								</div>#}
+{#							</div>#}
+{#						</div>#}
+{#						<div class="item-box-attr">#}
+{#							<div class="item-attr-title">#}
+{#								<label>Color</label>#}
+{#							</div>#}
+{#							<div class="item-attr-content">#}
+{#								<ul class="attr-color list-inline">#}
+{#									<li><a href="#"><span class="blue"></span></a></li>#}
+{#									<li><a class="selected" href="#"><span class="blue-air"></span></a></li>#}
+{#									<li><a href="#"><span class="yellow"></span></a></li>#}
+{#									<li><a href="#"><span class="green"></span></a></li>#}
+{#									<li><a href="#"><span class="red"></span></a></li>#}
+{#								</ul>#}
+{#							</div>#}
+{#						</div>#}
+{#						<div class="item-box-attr">#}
+{#							<div class="item-attr-title">#}
+{#								<label>Size</label>#}
+{#							</div>#}
+{#							<div class="item-attr-content">#}
+{#								<ul class="attr-size list-inline">#}
+{#									<li><a href="#">S</a></li>#}
+{#									<li><a href="#">M</a></li>#}
+{#									<li><a href="#">L</a></li>#}
+{#									<li><a href="#">XL</a></li>#}
+{#									<li><a href="#">2XL</a></li>#}
+{#									<li><a href="#">3XL</a></li>#}
+{#								</ul>#}
+{#							</div>#}
+{#						</div>#}
+						<div class="item-box-attr">
+{#							<div class="item-attr-title">#}
+{#								<label>Brand</label>#}
+{#							</div>#}
+{#							<div class="item-attr-content">#}
+{#								<ul class="attr-brand list-inline">#}
+{#									<li><a href="#">Brand 01 </a></li>#}
+{#									<li><a href="#">Brand 02 </a></li>#}
+{#									<li><a href="#">Brand 03 </a></li>#}
+{#									<li><a href="#">Brand 04 </a></li>#}
+{#									<li><a href="#">Brand 05 </a></li>#}
+{#								</ul>#}
+{#							</div>#}
+						</div>
+					</div>
+					<!-- End Attribute Filter -->
+				</div>
+				<div class="tab-content">
+					<div id="furniture" class="tab-pane active" role="tabpanel">
+						<ul class="list-product row list-unstyled">
+                            {% for rs in products_latest %}
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="{{ rs.image.url }}" style="height: 180px;" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+											<span class="sale-item">-20%</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>
+                                                {{ rs.price }}
+                                            </span>
+										</div>
+										<h3 class="title-product"><a href="/product/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></h3>
+										<p class="desc">{{ rs.description }}</p>
+										<div class="wrap-star-rating">
+											<div style="width:60%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+                            {% endfor %}
+						</ul>
+{#						<div class="paginav-best-seller">#}
+{#							<ul class="list-inline">#}
+{#								<li><a href="#" class="active">1</a></li>#}
+{#								<li><a href="#">2</a></li>#}
+{#								<li><a href="#">3</a></li>#}
+{#							</ul>#}
+{#						</div>#}
+					</div>
+
+                <div id="furniture" class="tab-pane active" role="tabpanel">
+						<ul class="list-product row list-unstyled">
+                            {% for rs in products_picked %}
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="{{ rs.image.url }}" style="height: 180px;" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+											<span class="sale-item">-20%</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>
+                                                {{ rs.price }}
+                                            </span>
+										</div>
+										<h3 class="title-product"><a href="/product/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></h3>
+										<p class="desc">{{ rs.description }}</p>
+										<div class="wrap-star-rating">
+											<div style="width:60%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+                            {% endfor %}
+						</ul>
+						<div class="paginav-best-seller">
+							<ul class="list-inline">
+								<li><a href="#" class="active">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- End New Arrival -->
+					<div id="decor" class="tab-pane" role="tabpanel">
+						<ul class="list-product row list-unstyled">
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/1.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+											<span class="sale-item">-20%</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$50.00</span> <del>$59.80</del>
+										</div>
+										<h3 class="title-product"><a href="#">Dubhen Caunoiteng kug</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:60%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/2.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$30.00</span>
+										</div>
+										<h3 class="title-product"><a href="#">Xocrac Hencin Kooper</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/3.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$17.00</span>
+										</div>
+										<h3 class="title-product"><a href="#">Cooc Huyinh Phale</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/4.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$69.23</span> <del>$69.23</del>
+										</div>
+										<h3 class="title-product"><a href="#">Apple Red Cool</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/5.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+											<span class="sale-item">-20%</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$45.23</span>
+										</div>
+										<h3 class="title-product"><a href="#">Tube Wall Sconce</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/6.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$38.90</span> <del>$97.80 </del>
+										</div>
+										<h3 class="title-product"><a href="#">Choadink Hoopen</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/7.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$78.00</span> <del>$97.80 </del>
+										</div>
+										<h3 class="title-product"><a href="#">Osum Phane Quiks</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/8.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="sale-item">-20%</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$80.00</span>
+										</div>
+										<h3 class="title-product"><a href="#">Consexao Light enst</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:80%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="paginav-best-seller">
+							<ul class="list-inline">
+								<li><a href="#" class="active">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- End Best Seller -->
+					<div id="lighting" class="tab-pane" role="tabpanel">
+						<ul class="list-product row list-unstyled">
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/9.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+											<span class="sale-item">-20%</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$50.00</span> <del>$59.80</del>
+										</div>
+										<h3 class="title-product"><a href="#">Dubhen Caunoiteng kug</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:60%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/10.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$30.00</span>
+										</div>
+										<h3 class="title-product"><a href="#">Xocrac Hencin Kooper</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/11.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$17.00</span>
+										</div>
+										<h3 class="title-product"><a href="#">Cooc Huyinh Phale</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/12.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$69.23</span> <del>$69.23</del>
+										</div>
+										<h3 class="title-product"><a href="#">Apple Red Cool</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/13.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+											<span class="sale-item">-20%</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$45.23</span>
+										</div>
+										<h3 class="title-product"><a href="#">Tube Wall Sconce</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/14.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$38.90</span> <del>$97.80 </del>
+										</div>
+										<h3 class="title-product"><a href="#">Choadink Hoopen</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/15.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$78.00</span> <del>$97.80 </del>
+										</div>
+										<h3 class="title-product"><a href="#">Osum Phane Quiks</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/16.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="sale-item">-20%</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$80.00</span>
+										</div>
+										<h3 class="title-product"><a href="#">Consexao Light enst</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:80%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="paginav-best-seller">
+							<ul class="list-inline">
+								<li><a href="#" class="active">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- End Special -->
+					<div id="bedbath" class="tab-pane " role="tabpanel">
+						<ul class="list-product row list-unstyled">
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/17.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+											<span class="sale-item">-20%</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$50.00</span> <del>$59.80</del>
+										</div>
+										<h3 class="title-product"><a href="#">Dubhen Caunoiteng kug</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:60%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/18.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$30.00</span>
+										</div>
+										<h3 class="title-product"><a href="#">Xocrac Hencin Kooper</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/19.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$17.00</span>
+										</div>
+										<h3 class="title-product"><a href="#">Cooc Huyinh Phale</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/20.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$69.23</span> <del>$69.23</del>
+										</div>
+										<h3 class="title-product"><a href="#">Apple Red Cool</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/21.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+											<span class="sale-item">-20%</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$45.23</span>
+										</div>
+										<h3 class="title-product"><a href="#">Tube Wall Sconce</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/22.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$38.90</span> <del>$97.80 </del>
+										</div>
+										<h3 class="title-product"><a href="#">Choadink Hoopen</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/23.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="new-item">new</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$78.00</span> <del>$97.80 </del>
+										</div>
+										<h3 class="title-product"><a href="#">Osum Phane Quiks</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:70%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="col-md-3 col-sm-6 col-xs-12">
+								<div class="item-product item-product-loadmore">
+									<div class="item-product-thumb">
+										<a href="#" class="product-thumb-link"><img class="img-responsive" src="images/photos/png/24.png" alt=""></a>
+										<a href="#" class="product-quick-view">quick shop</a>
+										<div class="product-box-promotion">
+											<span class="sale-item">-20%</span>
+										</div>
+									</div>
+									<div class="item-product-info">
+										<div class="info-price">
+											<span>$80.00</span>
+										</div>
+										<h3 class="title-product"><a href="#">Consexao Light enst</a></h3>
+										<p class="desc">Lorem ipsum dolor sit amet conse ctetur adipisicing elit..</p>
+										<div class="wrap-star-rating">
+											<div style="width:80%" class="inner-star-rating"></div>
+										</div>
+										<div class="cart-wishlist-compare">
+											<a href="#" class="product-add-cart"></a>
+											<a href="#" class="product-wishlist"><span class="lnr lnr-heart"></span></a>
+											<a href="#" class="product-compare"><span class="lnr lnr-sync"></span></a>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="paginav-best-seller">
+							<ul class="list-inline">
+								<li><a href="#" class="active">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- End Featured -->
+				</div>
+			</div>
+		</div>
+		<!-- End Product Best Sale -->
+		<div class="banner-bottom-home3">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="banner-box banner-style2">
+							<a href="#" class="banner-box-link">
+								<img src="images/theme/bn4.png" alt="" />
+							</a>
+							<div class="banner-box-info">
+								<h3 class="title-banner-box-black">BENCHES</h3>
+								<h2 class="title-banner-box-blue">40% off</h2>
+								<a href="#" class="btn-box-banner">shop now</a>
+							</div>
+							<h2 class="banner-box-title banner-box-title-blue">sets</h2>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="banner-box banner-style2">
+							<a href="#" class="banner-box-link">
+								<img src="images/theme/bn5.png" alt="" />
+							</a>
+							<div class="banner-box-info">
+								<h3 class="title-banner-box-black">BENCHES</h3>
+								<h2 class="title-banner-box-blue">60% off</h2>
+								<a href="#" class="btn-box-banner">shop now</a>
+							</div>
+							<h2 class="banner-box-title banner-box-title-blue">lounge chairs</h2>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="banner-box banner-style2">
+							<a href="#" class="banner-box-link">
+								<img src="images/theme/bn6.png" alt="" />
+							</a>
+							<div class="banner-box-info">
+								<h3 class="title-banner-box-black">BENCHES</h3>
+								<h2 class="title-banner-box-blue">50% off</h2>
+								<a href="#" class="btn-box-banner">shop now</a>
+							</div>
+							<h2 class="banner-box-title banner-box-title-blue">home wood</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Banner Bottom -->
